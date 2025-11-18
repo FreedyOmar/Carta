@@ -10,7 +10,7 @@
     <title>Carta</title>
 </head>
 <body>
-    <h1>¡Un detalle para una chica linda ❤️</h1>
+   <!-- <h1>titulo </h1> -->
 
     <div class="contenedor">
         <div class="envoltura-sobre">
@@ -38,27 +38,14 @@
         function showDedicationText() {
             let text = getURLParam('text');
             if (!text) {
-                text = `Quiero contarte un secreto...
-La verdad no soy muy bueno hablando, seguramente ya lo notaste, me travo mucho y me cuesta expresarme
-Pero lo que no puedo decirte; puedo escribirlo  
+                text = `Quiero disculparme contigo...
+Creo que ya lo habia mencionado pero verdad no soy muy bueno hablando,
                 
-Para mí, eres la chica más linda del mundo. Cada vez que te veo, mi corazón late más rápido y mi día se ilumina.
-Déjame demostrártelo con cada gesto, cada palabra y cada instante que compartamos.
+creeme quisiera poder decirte tantas cosas lindas que pienso de ti, pero te veo y el corazon se me acelera,Aun con mi forma torpe de comunicarme, quiero que sepas que me encantas. Me gusta tu manera de ser, lo que transmites, y cómo haces que incluso mis días más simples se sientan un poco más especiales.
 
-No sé qué pienses de mí… 
-pero yo quiero conocerte más, porque para mí es inevitable sentir lo que siento.
-Sé que, sin importar la versión de ti que conozca, amaré cada una de ellas.
+Tal vez no soy el mejor hablando, pero lo que siento por ti es real. Y si te lo digo ahora, es porque ya no quiero quedarme callado. Me gustaría conocerte más, compartir más momentos y, si tú también lo sientes, dar un paso hacia algo más bonito entre los dos.
 
-Eres como el sol: das luz incluso en mis días nublados, haces que todo a tu alrededor cobre vida,
-y yo soy feliz con solo sentir que, de alguna forma, también giro a tu alrededor.
-
-Para algunos, conocerte puede ser cuestión de suerte o del destino…
-pero para mí, conocerte fue un regalo de Dios.
-
-No importa cuánto brille la luna, el sol o incluso un simple foco…
-siempre me encantará el brillo de tus ojos.✨
-
-y seguramente depues de leer esto estaras pensando que es algo muy cursi; pero que puedo decir aveces soy muy cursi`;
+No espero una respuesta perfecta, solo quería ser honesto… por primera vez sin miedo. `;
             } else {
                 text = decodeURIComponent(text).replace(/\\n/g, '\n');
             }
