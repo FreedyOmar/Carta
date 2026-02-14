@@ -2,12 +2,15 @@ const envoltura = document.querySelector(".envoltura-sobre");
 const carta = document.querySelector(".carta");
 
 document.addEventListener("click", (e) => {
+
+    // ABRIR SOBRE
     if (e.target.matches(".sobre") || 
         e.target.matches(".solapa-derecha") ||
         e.target.matches(".solapa-izquierda") ||
         e.target.matches(".corazon")) {
+
         envoltura.classList.toggle("abierto");
-        envoltura.classList.add("desactivar-sobre")
+        envoltura.classList.add("desactivar-sobre");
 
         if (!carta.classList.contains("abierta")) {
             setTimeout(() => {
@@ -19,16 +22,26 @@ document.addEventListener("click", (e) => {
                 }, 500);
             }, 1000);
         }
-    } else if (e.target.matches(".envoltura-sobre *")) {
+
+    } 
+    
+    // CERRAR CARTA (pero NO si es botón video)
+    else if (
+        e.target.closest(".envoltura-sobre") &&
+        !e.target.closest(".ver-video")
+    ) {
+
         envoltura.classList.remove("abierto");
-        envoltura.classList.remove("desactivar-sobre")
+        envoltura.classList.remove("desactivar-sobre");
+
         if (carta.classList.contains("abierta")) {
             carta.classList.add("cerrando-carta");
 
             setTimeout(() => {
                 carta.classList.remove("cerrando-carta");
-                carta.classList.remove("abierta")
+                carta.classList.remove("abierta");
             }, 500);
         }
     }
-})
+
+});
