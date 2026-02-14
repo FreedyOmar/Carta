@@ -63,7 +63,7 @@
 
                         <div id="contenedorVideo" class="video-oculto">
                             <video controls width="100%">
-                                 <source src="/02.mp4" type="video/mp4">
+                                <source src="/02.mp4" type="video/mp4">
                                 Tu navegador no soporta video.
                             </video>
                         </div>
@@ -78,6 +78,7 @@
         </div>
     </div>
 
+    <!-- TEXTO DINÁMICO -->
     <script>
         function getURLParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -90,7 +91,7 @@
                 text = `Quiero contarte un secreto...
 La verdad no soy muy bueno hablando, seguramente ya lo notaste, me travo mucho y me cuesta expresarme
 Pero lo que no puedo decirte; puedo escribirlo  
-                
+
 Para mí, eres la chica más linda del mundo. Cada vez que te veo, mi corazón late más rápido y mi día se ilumina.
 Déjame demostrártelo con cada gesto, cada palabra y cada instante que compartamos.
 
@@ -107,7 +108,7 @@ pero para mí, conocerte fue un regalo de Dios.
 No importa cuánto brille la luna, el sol o incluso un simple foco…
 siempre me encantará el brillo de tus ojos.✨
 
-y seguramente depues de leer esto estaras pensando que es algo muy cursi; pero que puedo decir aveces soy muy cursi`;
+y seguramente despues de leer esto estaras pensando que es algo muy cursi; pero que puedo decir aveces soy muy cursi`;
             } else {
                 text = decodeURIComponent(text).replace(/\\n/g, '\n');
             }
@@ -118,16 +119,24 @@ y seguramente depues de leer esto estaras pensando que es algo muy cursi; pero q
         window.onload = showDedicationText;
     </script>
 
-    <!-- SCRIPT BOTÓN VIDEO -->
+    <!-- SCRIPT BOTÓN VIDEO CORREGIDO -->
     <script>
-        document.getElementById("btnVideo").addEventListener("click", function(){
-            document.getElementById("contenedorVideo").style.display = "block";
+        const btnVideo = document.getElementById("btnVideo");
+        const contenedorVideo = document.getElementById("contenedorVideo");
+
+        btnVideo.addEventListener("click", function(e){
+            e.stopPropagation(); // 🚀 evita que cierre la carta
+            contenedorVideo.style.display = "block";
             this.style.display = "none";
+        });
+
+        contenedorVideo.addEventListener("click", function(e){
+            e.stopPropagation(); // 🚀 evita que el video cierre la carta
         });
     </script>
 
+    <!-- TU SCRIPT PRINCIPAL -->
     <script src="script._v1.js"></script>
 
 </body>
 </html>
-
